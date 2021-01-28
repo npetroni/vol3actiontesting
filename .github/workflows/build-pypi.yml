@@ -31,7 +31,8 @@ jobs:
 
     - name: Build PyPi packages
       run: |
-        python setup.py sdist bdist_wheel
+        python setup.py sdist --formats=gztar,zip
+        python setup.py bdist_wheel
 
     - name: Archive dist
       uses: actions/upload-artifact@v2
